@@ -6,7 +6,7 @@ public abstract class Pessoa {
     private String nome;
     private String rg;
     private String cpf;
-    private int idade;
+    private Integer idade;
 
     public void setNome(String nome){
     
@@ -33,7 +33,7 @@ public abstract class Pessoa {
         else{}
     }
       
-      public void setIdade(int idade){
+      public void setIdade(Integer idade){
           
           this.idade = idade;
       }
@@ -52,7 +52,7 @@ public abstract class Pessoa {
           return this.rg;
       }
    
-      public int getIdade(){
+      public Integer getIdade(){
       
           return this.idade;
       }
