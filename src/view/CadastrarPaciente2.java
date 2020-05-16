@@ -12,7 +12,6 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import model.Hospital;
 import model.Paciente;
-import model.PacienteDAO;
 
 /**
  *
@@ -209,7 +208,7 @@ public class CadastrarPaciente2 extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         ControllerHospital ch = new ControllerHospital();
-        cmbHospital.removeAllItems();
+        cmbHospital.removeAllItems() ;
         
         for(Hospital h : ch.listarHospital()){
             cmbHospital.addItem(h);

@@ -9,6 +9,8 @@ import java.sql.Connection;
 import javax.swing.JOptionPane;
 import view.CadastrarHospital2;
 import view.CadastrarPaciente2; 
+import view.CadastrarFuncionario2;
+import view.CadastrarProntoSocorro2;
       
 
 
@@ -36,7 +38,7 @@ public class Principal {
         ProntoSocorro ps = new ProntoSocorro(h,1);
         CadastrarHospital2 cadh = new CadastrarHospital2();
         CadastrarPaciente2 cp = new CadastrarPaciente2();
-        
+        CadastrarProntoSocorro2 cps = new CadastrarProntoSocorro2();
         
         /*p.setNome("Douglas");
         p.setCodPaciente(12344124);
@@ -130,7 +132,9 @@ public class Principal {
                            "\nid da filial: "+ps.getIdFilial());*/
         
         cadh.setVisible(true);
-        cp.setVisible(true);
+        //cp.setVisible(true);
+        cps.setVisible(true);
+        
        
        
         
