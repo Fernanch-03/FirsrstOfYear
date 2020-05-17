@@ -11,46 +11,35 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.lang.Exception;
 import java.sql.SQLException;
-        
 
-public class FuncionarioDAO {
-    // MUDA: protected Connection con = new ConnectionFactory().getConnection();
-    // Se continuasse com esse atributo ele ia fazer so uma 
-   
-    Funcionario f = new Funcionario();
-    public void cadastrar(Funcionario funcionario) {
+public class EnfermeiroDAO {
+    public void cadastrar(Enfermeiro enfermeiro){
         try{
-            String query = "insert into funcionario (nome,cpf,rg,idade,senha,vlHora) values (?,?,?,?,?,?) ";
+            String query = "insert into enfermeiro (corem) values (?) ";
             try (Connection con = new ConnectionFactory().getConnection()) {
                 PreparedStatement preparedStmt = con.prepareStatement(query);
-                preparedStmt.setString(1, f.getNome());
-                preparedStmt.setString(2, f.getCpf());
-                preparedStmt.setString(3, f.getRg());
-                preparedStmt.setInt(4, f.getIdade());
-                preparedStmt.setString(5, f.getSenha());
-                preparedStmt.setDouble(6, f.getVlrHora());
-                
-                
+                preparedStmt.setString(1, enfermeiro.getCorem());
                 preparedStmt.executeUpdate();
             }
         }catch(RuntimeException | ClassNotFoundException | SQLException e){throw new RuntimeException(e.getMessage());}
     }
     
-    public ArrayList<Funcionario> buscar(){
-        ArrayList<Funcionario> ah = new ArrayList<Funcionario>(); 
+    public ArrayList<Enfermeiro> buscar(){
+        ArrayList<Enfermeiro> ae = new ArrayList<Enfermeiro>(); 
         try{
+            String query = "select * from enfermeiro;";
             Connection con = new ConnectionFactory().getConnection();
-            String query = "select * from funcionario;";
             PreparedStatement preparedStmt = con.prepareStatement(query);
-            ResultSet rs = preparedStmt.executeQuery();  
+            ResultSet rs = preparedStmt.executeQuery(); 
             
             while(rs.next()){
-                f.setMatricula(rs.getInt("id"));
-                ah.add(f);
+                Enfermeiro e = new Enfermeiro();
+                e.setMatricula(rs.getInt("id"));
+                ae.add(e);
             }
             
         }catch(RuntimeException | ClassNotFoundException | SQLException e){throw new RuntimeException(e.getMessage());}
         
-        return ah;
+        return ae;
     }
 }

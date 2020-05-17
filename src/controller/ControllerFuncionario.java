@@ -17,7 +17,7 @@ public class ControllerFuncionario {
         fDAO.cadastrar(funcionario);
     }
     
-    public ArrayList<Funcionario> listarHospital(){
+    public ArrayList<Funcionario> listarFuncionario(){
         FuncionarioDAO fDAO = new FuncionarioDAO();
         return fDAO.buscar();
     }

@@ -59,7 +59,14 @@ use hospital;
  
  );
  
+ 
+/*select * from hospital;
 
+select* from pacientes;
+
+select * from funcionario;*/
+
+/*select * from medicos;*/
  
  
 
